@@ -17,7 +17,7 @@ pygame.display.set_caption("Snake Game")
 clock = pygame.time.Clock()
 
 class Menu:
-    def __init__(self, width, height, title="SNAKE GAME"):
+    def __init__(self, width, height, title="snake game"):
         self.width = width
         self.height = height
         self.title = title
@@ -61,14 +61,14 @@ class Menu:
             screen.blit(score_text, (self.width // 2 - score_text.get_width() // 2, 150))
 
         for i, option in enumerate(self.options):
-            color = green if i == self.selected_index else white
+            color = gray if i == self.selected_index else white
             text = self.font.render(option, True, color)
             x = self.width // 2 - text.get_width() // 2
             y = 200 + i * 50
             screen.blit(text, (x, y))
 
             if i == self.selected_index:
-                arrow = self.font.render(">", True, green)
+                arrow = self.font.render(">", True, gray)
                 screen.blit(arrow, (x - 40, y))
 
 class Setting:
